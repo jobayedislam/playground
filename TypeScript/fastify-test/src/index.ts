@@ -1,11 +1,17 @@
 import Fastify from "fastify";
+import { Task } from "./types.js";
 
 const fastify = Fastify({
   logger: true,
 });
+const tasks: Task[] = [];
 
 fastify.get("/", async (request, response) => {
   return { message: "Hello World" };
+});
+
+fastify.get("/tasks", async (request, respose) => {
+  return tasks;
 });
 
 try {
