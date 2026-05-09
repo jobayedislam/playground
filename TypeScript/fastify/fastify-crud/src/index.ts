@@ -24,6 +24,11 @@ server.get("/tasks", async (req, res) => {
 
 type CreateTaskBody = Pick<Task, "title">;
 
+server.post<{ Body: CreateTaskBody }>("/tasks", async (req, res) => {
+  const { title } = req.body;
+  res.code(201).send(title);
+});
+
 try {
   server.listen({ port: 3000 });
 } catch (err) {
