@@ -26,7 +26,16 @@ type CreateTaskBody = Pick<Task, "title">;
 
 server.post<{ Body: CreateTaskBody }>("/tasks", async (req, res) => {
   const { title } = req.body;
-  res.code(201).send(title);
+
+  const newTask = {
+    id: randomUUID(),
+    title,
+    completed: false,
+    timestamp: `${Date.now()}`,
+  };
+
+  tasks.push(newTask);
+  res.code(201).send(newTask);
 });
 
 try {
