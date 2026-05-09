@@ -38,6 +38,24 @@ server.post<{ Body: CreateTaskBody }>("/tasks", async (req, res) => {
   res.code(201).send(newTask);
 });
 
+type DeleteTaskParams = Pick<Task, "id">;
+
+server.delete<{ Params: DeleteTaskParams }>("/tasks/:id", async (req, res) => {
+  const { id } = req.params;
+
+  let taskIndex = -1;
+  tasks.forEach((item) => {
+    if (item.id === id) taskIndex = tasks.indexOf(item);
+  });
+
+  if (taskIndex >= 0) {
+    tasks.splice(taskIndex, 1);
+    res.code(200).send({ message: "Deleted" });
+  } else {
+    res.code(404).send({ message: "Not found" });
+  }
+});
+
 try {
   server.listen({ port: 3000 });
 } catch (err) {
