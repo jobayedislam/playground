@@ -22,6 +22,8 @@ server.get("/tasks", async (req, res) => {
   res.code(200).send(tasks);
 });
 
+type CreateTaskBody = Pick<Task, "title">;
+
 try {
   server.listen({ port: 3000 });
 } catch (err) {
