@@ -10,7 +10,7 @@ fastify.get("/", async (request, response) => {
   return { message: "Hello World" };
 });
 
-fastify.get("/tasks", async (request, respose) => {
+fastify.get("/tasks", async (request, response) => {
   return tasks;
 });
 
