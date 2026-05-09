@@ -4,6 +4,10 @@ const fastify = Fastify({
   logger: true,
 });
 
+fastify.get("/", async function handler(request, response) {
+  return { message: "Hello World" };
+});
+
 try {
   await fastify.listen({ port: 3000 });
 } catch (err) {
