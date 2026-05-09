@@ -10,7 +10,7 @@ for (let i = 1; i <= 5; i++) {
     id: randomUUID(),
     title: `Task ${i}`,
     completed: false,
-    timestamp: `${Date.now()}`,
+    timestamp: Date.now().toString(),
   });
 }
 
@@ -31,7 +31,7 @@ server.post<{ Body: CreateTaskBody }>("/tasks", async (req, res) => {
     id: randomUUID(),
     title,
     completed: false,
-    timestamp: `${Date.now()}`,
+    timestamp: Date.now().toString(),
   };
 
   tasks.push(newTask);
