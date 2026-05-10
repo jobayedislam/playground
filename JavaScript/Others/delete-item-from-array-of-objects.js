@@ -32,7 +32,7 @@ const mainArray = [
 ];
 
 const getTaskIndex = (arr, id) => {
-  return mainArray.findIndex((item) => item.id === id);
+  return arr.findIndex((item) => item.id === id);
 };
 
 let taskIndex = getTaskIndex(mainArray, "9ea8aa52-f59b-46fd-b76c-52a567b58619");
