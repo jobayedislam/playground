@@ -67,7 +67,20 @@ server.put<{ Params: UpdateTaskParams; Body: UpdateTaskBody }>(
   async (req, res) => {
     const { id } = req.params;
     const { title, completed } = req.body;
-    res.code(200).send({ id: id, newTitle: title, completed });
+    let taskIndex = -1;
+
+    tasks.forEach((item) => {
+      if (item.id === id) taskIndex = tasks.indexOf(item);
+    });
+
+    if (taskIndex >= 0) {
+      if (title) tasks[taskIndex].title = title;
+      if (completed) tasks[taskIndex].completed = completed;
+
+      res.code(200).send(tasks[taskIndex]);
+    } else {
+      res.code(404).send({ message: "Task not found" });
+    }
   },
 );
 
