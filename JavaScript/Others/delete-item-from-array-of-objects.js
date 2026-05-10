@@ -31,15 +31,13 @@ const mainArray = [
   },
 ];
 
-let taskIndex;
-mainArray.forEach((item) => {
-  if (item.id === "9ea8aa52-f59b-46fd-b76c-52a567b58619") {
-    taskIndex = mainArray.indexOf(item);
-  }
-});
+const getTaskIndex = (arr, id) => {
+  arr.forEach((item) => {
+    if (item.id === id) {
+      return mainArray.indexOf(id);
+    }
+  });
+};
 
-if (taskIndex && taskIndex >= 0) {
-  mainArray.splice(taskIndex, 1);
-}
-
-console.log(mainArray);
+let taskIndex = getTaskIndex(mainArray, "9ea8aa52-f59b-46fd-b76c-52a567b58619");
+console.log(taskIndex);
