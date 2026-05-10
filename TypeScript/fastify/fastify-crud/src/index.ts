@@ -14,6 +14,10 @@ for (let i = 1; i <= 5; i++) {
   });
 }
 
+const getTaskIndex = (arr: Task[], id: string): number => {
+  return arr.findIndex((item) => item.id === id);
+};
+
 server.get("/", async (req, res) => {
   res.code(200).send({ message: "OK" });
 });
