@@ -48,11 +48,7 @@ server.delete<{ Params: DeleteTaskParams }>(
   "/tasks/delete/:id",
   async (req, res) => {
     const { id } = req.params;
-
-    let taskIndex = -1;
-    tasks.forEach((item) => {
-      if (item.id === id) taskIndex = tasks.indexOf(item);
-    });
+    let taskIndex = getTaskIndex(tasks, id);
 
     if (taskIndex >= 0) {
       tasks.splice(taskIndex, 1);
@@ -71,11 +67,7 @@ server.put<{ Params: UpdateTaskParams; Body: UpdateTaskBody }>(
   async (req, res) => {
     const { id } = req.params;
     const { title, completed } = req.body;
-    let taskIndex = -1;
-
-    tasks.forEach((item) => {
-      if (item.id === id) taskIndex = tasks.indexOf(item);
-    });
+    let taskIndex = getTaskIndex(tasks, id);
 
     if (taskIndex >= 0) {
       if (title) tasks[taskIndex].title = title;
