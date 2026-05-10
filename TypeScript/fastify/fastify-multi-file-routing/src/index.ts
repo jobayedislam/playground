@@ -1,5 +1,6 @@
 import fastify from "fastify";
 import { todoRoutes } from "./routes/todoRoutes";
+import { userRoutes } from "./routes/userRoutes";
 
 const server = fastify({ logger: true });
 
@@ -8,6 +9,7 @@ server.get("/", async (req, res) => {
 });
 
 server.register(todoRoutes, { prefix: "/todos" });
+server.register(userRoutes, { prefix: "/users" });
 
 try {
   server.listen({ port: 3000 });
