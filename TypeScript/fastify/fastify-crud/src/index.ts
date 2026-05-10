@@ -59,6 +59,16 @@ server.delete<{ Params: DeleteTaskParams }>(
   },
 );
 
+type UpdateTaskParams = Pick<Task, "id">;
+
+server.put<{ Params: UpdateTaskParams }>(
+  "/tasks/update/:id",
+  async (req, res) => {
+    const { id } = req.params;
+    res.code(200).send({ id: id });
+  },
+);
+
 try {
   server.listen({ port: 3000 });
 } catch (err) {
