@@ -60,12 +60,14 @@ server.delete<{ Params: DeleteTaskParams }>(
 );
 
 type UpdateTaskParams = Pick<Task, "id">;
+type UpdateTaskBody = Pick<Task, "title" | "completed">;
 
-server.put<{ Params: UpdateTaskParams }>(
+server.put<{ Params: UpdateTaskParams; Body: UpdateTaskBody }>(
   "/tasks/update/:id",
   async (req, res) => {
     const { id } = req.params;
-    res.code(200).send({ id: id });
+    const { title, completed } = req.body;
+    res.code(200).send({ id: id, newTitle: title, completed });
   },
 );
 
