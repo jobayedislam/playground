@@ -8,3 +8,10 @@ if (fs.existsSync(dbFile)) {
 }
 
 const db = new DatabaseSync(dbFile);
+
+db.exec(`
+    CREATE TABLE users(
+        id INTEGER PRIMARY KEY,
+        name TEXT
+    ) STRICT
+`);
