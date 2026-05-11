@@ -18,3 +18,4 @@ db.exec(`
 
 const insert = db.prepare("INSERT INTO users (name) VALUES (?)");
 insert.run("John Doe");
+insert.run("Jane Doe");
