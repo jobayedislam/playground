@@ -1,7 +1,9 @@
 import { FastifyInstance } from "fastify";
 
-export const tasksRoute = async (server: FastifyInstance) => {
+const tasksRoute = async (server: FastifyInstance) => {
   server.get("/", async (req, res) => {
-    res.code(200).send({ message: "Successfully reached taskRoute" });
+    res.code(200).send({ message: "Successfully reached taskRoute." });
   });
 };
+
+export default tasksRoute;
