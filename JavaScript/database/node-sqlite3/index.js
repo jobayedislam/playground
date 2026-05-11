@@ -8,4 +8,6 @@ database.exec(`
     ) STRICT
 `);
 
-console.log(database);
+const insert = database.prepare("INSERT INTO data (key, value) VALUES (?, ?)");
+
+console.log(insert);
