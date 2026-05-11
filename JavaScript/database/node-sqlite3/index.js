@@ -15,4 +15,4 @@ insert.run(2, "World");
 
 const query = database.prepare("SELECT * FROM data ORDER BY key");
 
-console.log(insert);
+console.log(query.all());
