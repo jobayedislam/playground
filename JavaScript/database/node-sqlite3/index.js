@@ -10,4 +10,7 @@ database.exec(`
 
 const insert = database.prepare("INSERT INTO data (key, value) VALUES (?, ?)");
 
+insert.run(1, "Hello");
+insert.run(2, "World");
+
 console.log(insert);
