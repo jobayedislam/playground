@@ -7,4 +7,4 @@ if (fs.existsSync(dbFile)) {
   console.log("File deleted.");
 }
 
-// const db = new DatabaseSync("data.db");
+const db = new DatabaseSync(dbFile);
