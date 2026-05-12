@@ -1,1 +1,3 @@
-console.log("Hello World!");
+import { DatabaseSync } from "node:sqlite";
+const db = new DatabaseSync(":memory:");
+console.log(db);
