@@ -1,4 +1,8 @@
-export const data = [
+interface Users {
+  name: string;
+}
+
+export const data: Users[] = [
   { name: "John Doe" },
   { name: "Jahn Doe" },
   { name: "Alice Hamilton" },
