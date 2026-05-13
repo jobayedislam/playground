@@ -1,7 +1,6 @@
 import { DatabaseSync } from "node:sqlite";
 import * as fs from "node:fs";
 import { data } from "./seed.js";
-import { it } from "node:test";
 
 const dbFile = "./data.db";
 
