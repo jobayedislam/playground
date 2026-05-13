@@ -34,6 +34,8 @@ const data: Users[] = [
   { name: "" },
 ];
 
+db.exec("BEGIN");
 data.forEach((item) => {
   insert.run(item.name);
 });
+db.exec("COMMIT");
