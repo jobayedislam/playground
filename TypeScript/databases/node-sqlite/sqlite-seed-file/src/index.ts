@@ -16,3 +16,5 @@ db.exec(`
         name TEXT
     ) STRICT
 `);
+
+const insert = db.prepare("INSERT INTO users (name) VALUES (?)");
