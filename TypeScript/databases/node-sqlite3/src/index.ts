@@ -12,3 +12,6 @@ const insert = db.prepare("INSERT INTO users (name) VALUES (?)");
 
 insert.run("John Doe");
 insert.run("Jane Doe");
+
+const query = db.prepare("SELECT * FROM users");
+console.log(query.all());
