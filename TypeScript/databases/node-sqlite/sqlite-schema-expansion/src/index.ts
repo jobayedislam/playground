@@ -29,5 +29,8 @@ db.exec(`
 `);
 
 const insertUser = db.prepare("INSERT INTO users (name) VALUES (?)");
+const insertTask = db.prepare(
+  "INSERT INTO tasks (user_id, description, priority, completed_at) VALUES (?, ?, ?, ?)",
+);
 
 console.log(db);
