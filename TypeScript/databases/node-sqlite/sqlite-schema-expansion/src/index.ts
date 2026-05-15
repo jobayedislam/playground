@@ -28,4 +28,6 @@ db.exec(`
     ) STRICT
 `);
 
+const insertUser = db.prepare("INSERT INTO users (name) VALUES (?)");
+
 console.log(db);
