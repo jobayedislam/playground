@@ -17,4 +17,15 @@ db.exec(`
     ) STRICT
 `);
 
+db.exec(`
+    CREATE TABLE tasks (
+        id INTEGER PRIMARY KEY,
+        user_id INTEGER,
+        description TEXT,
+        priority REAL,
+        completed_at INT,
+        FOREIGN KEY(user_id) REFERENCES users(id)
+    ) STRICT
+`);
+
 console.log(db);
