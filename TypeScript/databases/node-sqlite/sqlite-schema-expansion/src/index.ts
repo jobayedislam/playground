@@ -10,4 +10,11 @@ if (fs.existsSync(dbFile)) {
 
 export const db = new DatabaseSync(dbFile);
 
+db.exec(`
+    CREATE TABLE users (
+        id INTEGER PRIMARY KEY,
+        name TEXT
+    ) STRICT
+`);
+
 console.log(db);
