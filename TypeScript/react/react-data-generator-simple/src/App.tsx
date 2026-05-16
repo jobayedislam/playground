@@ -18,14 +18,20 @@ function App() {
         {areBooksShown ? "Hide Books" : "Show Books"}
       </button>
       {areBooksShown && (
-        <div className="container">
-          {data.map((book) => (
-            <div className="card" key={book.id}>
-              <p>Name: {book.name}</p>
-              <p>Author: {book.author}</p>
-              <p>ISBN: {book.isbn}</p>
-            </div>
-          ))}
+        <div>
+          <div className="card-header">
+            Number of books: <input type="number" value={numOfBooks} />
+          </div>
+
+          <div className="container">
+            {data.map((book) => (
+              <div className="card" key={book.id}>
+                <p>Name: {book.name}</p>
+                <p>Author: {book.author}</p>
+                <p>ISBN: {book.isbn}</p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </>
