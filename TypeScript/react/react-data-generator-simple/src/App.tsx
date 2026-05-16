@@ -12,6 +12,13 @@ function App() {
   return (
     <>
       <h1>Simple Data Generator example</h1>
+      {data.map((book) => (
+        <div key={book.id}>
+          <p>Name: {book.name}</p>
+          <p>Author: {book.author}</p>
+          <p>ISBN: {book.isbn}</p>
+        </div>
+      ))}
     </>
   );
 }
