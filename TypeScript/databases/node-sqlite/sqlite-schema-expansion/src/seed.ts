@@ -55,6 +55,18 @@ interface Tasks {
   completedAt: number;
 }
 
+const taskData: Tasks[] = [
+  { userId: 1, description: "Task 1", priority: 0.5, completedAt: Date.now() },
+  { userId: 2, description: "Task 2", priority: 0.5, completedAt: Date.now() },
+  { userId: 1, description: "Task 3", priority: 0.5, completedAt: Date.now() },
+  { userId: 5, description: "Task 4", priority: 0.5, completedAt: Date.now() },
+  { userId: 2, description: "Task 5", priority: 0.5, completedAt: Date.now() },
+  { userId: 6, description: "Task 6", priority: 0.5, completedAt: Date.now() },
+  { userId: 3, description: "Task 7", priority: 0.5, completedAt: Date.now() },
+  { userId: 7, description: "Task 8", priority: 0.5, completedAt: Date.now() },
+  { userId: 8, description: "Task 9", priority: 0.5, completedAt: Date.now() },
+];
+
 db.exec("BEGIN");
 userData.forEach((item) => {
   insertUser.run(item.name);
