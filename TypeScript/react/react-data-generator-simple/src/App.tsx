@@ -12,6 +12,11 @@ function App() {
     setAreBooksShown(!areBooksShown);
   };
 
+  const handleBooksNumberChange = (value: string) => {
+    console.log(value);
+    setInputText(value);
+  };
+
   return (
     <>
       <h1>Simple Data Generator example</h1>
@@ -21,7 +26,12 @@ function App() {
       {areBooksShown && (
         <div>
           <div className="card-header">
-            Number of books: <input type="text" value={inputText} />
+            Number of books:{" "}
+            <input
+              type="text"
+              value={inputText}
+              onChange={(e) => handleBooksNumberChange(e.target.value)}
+            />
           </div>
 
           <div className="container">
