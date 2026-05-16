@@ -5,14 +5,14 @@ export interface Book {
   author: string;
 }
 
-const generateData = (): Book[] => {
+const generateData = (amount: number = 5): Book[] => {
   const books = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < amount; i++) {
     const book = {
       id: i + 1,
       name: `Book NO: ${i + 1}`,
       isbn: Math.floor(Math.random() * 9000000000000) + 1000000000000,
-      author: `Author NO: ${Math.floor(Math.random() * 10) + 1}`,
+      author: `Author NO: ${Math.floor(Math.random() * amount) + 1}`,
     };
     books.push(book);
   }

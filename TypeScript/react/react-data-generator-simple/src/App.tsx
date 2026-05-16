@@ -3,7 +3,7 @@ import "./App.css";
 import generateData, { type Book } from "./data/dataGenerator";
 
 function App() {
-  const [data] = useState<Book[]>(generateData());
+  const [data] = useState<Book[]>(generateData(10));
   const [areBooksShown, setAreBooksShown] = useState<boolean>(false);
 
   const handleToggleBooks = () => {
