@@ -32,3 +32,24 @@ const insertUser = db.prepare("INSERT INTO users (name) VALUES (?)");
 const insertTask = db.prepare(
   "INSERT INTO tasks (user_id, description, priority, completed_at) VALUES (?, ?, ?, ?)",
 );
+
+interface Users {
+  name: string;
+}
+
+const userData: Users[] = [
+  { name: "John Doe" },
+  { name: "Jahn Doe" },
+  { name: "Alice Hamilton" },
+  { name: "Bob O'Reilly" },
+  { name: "Charlie 123" },
+  { name: "Διονύσιος" },
+  { name: "রহিম" },
+  { name: "" },
+];
+
+db.exec("BEGIN");
+userData.forEach((item) => {
+  insertUser.run(item.name);
+});
+db.exec("COMMIT");
