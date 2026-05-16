@@ -19,6 +19,7 @@ function App() {
       />
       <button onClick={handleClick}>Show Text</button>
       <p>Live update: {text}</p>
+      <p>LocalStorage update: {localStorage.getItem("inputText")}</p>
     </>
   );
 }
