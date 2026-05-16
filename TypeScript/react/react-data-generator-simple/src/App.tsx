@@ -6,6 +6,7 @@ function App() {
   const [numOfBooks, setNumOfBooks] = useState<number>(15);
   const [data, setData] = useState<Book[]>(generateData(numOfBooks));
   const [areBooksShown, setAreBooksShown] = useState<boolean>(false);
+  const [inputText, setInputText] = useState<string>("");
 
   const handleToggleBooks = () => {
     setAreBooksShown(!areBooksShown);
@@ -20,7 +21,7 @@ function App() {
       {areBooksShown && (
         <div>
           <div className="card-header">
-            Number of books: <input type="number" value={numOfBooks} />
+            Number of books: <input type="text" value={inputText} />
           </div>
 
           <div className="container">
