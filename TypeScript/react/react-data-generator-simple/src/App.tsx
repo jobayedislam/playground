@@ -13,8 +13,12 @@ function App() {
   };
 
   const handleBooksNumberChange = (value: string) => {
-    console.log(value);
     setInputText(value);
+    const num = Number(value);
+
+    if (num !== 0 || !isNaN(num)) {
+      setData(generateData(num));
+    }
   };
 
   return (
