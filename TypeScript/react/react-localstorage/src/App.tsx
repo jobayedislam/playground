@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [text, setText] = useState<string>("");
@@ -21,7 +22,9 @@ function App() {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <button onClick={handleClick}>Show Text</button>
+      <button onClick={handleClick} className="button">
+        Show Text
+      </button>
       <p>Live update: {text}</p>
       <p>LocalStorage update: {returnStorageItem("inputText")}</p>
     </>
