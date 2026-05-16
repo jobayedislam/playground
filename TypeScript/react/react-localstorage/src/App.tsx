@@ -9,6 +9,10 @@ function App() {
     setText("");
   };
 
+  const returnStorageItem = (item: string): string | null => {
+    return localStorage.getItem(item);
+  };
+
   return (
     <>
       <h1>LocalStorage test</h1>
@@ -19,7 +23,7 @@ function App() {
       />
       <button onClick={handleClick}>Show Text</button>
       <p>Live update: {text}</p>
-      <p>LocalStorage update: {localStorage.getItem("inputText")}</p>
+      <p>LocalStorage update: {returnStorageItem("inputText")}</p>
     </>
   );
 }
