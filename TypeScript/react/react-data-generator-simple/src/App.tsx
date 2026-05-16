@@ -9,7 +9,7 @@ function App() {
     <>
       <h1>Simple Data Generator example</h1>
       {data.map((book) => (
-        <div key={book.id}>
+        <div className="card" key={book.id}>
           <p>Name: {book.name}</p>
           <p>Author: {book.author}</p>
           <p>ISBN: {book.isbn}</p>
