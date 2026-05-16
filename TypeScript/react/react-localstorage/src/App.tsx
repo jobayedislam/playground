@@ -18,6 +18,7 @@ function App() {
         onChange={(e) => setText(e.target.value)}
       />
       <button onClick={handleClick}>Show Text</button>
+      <p>Live update: {text}</p>
     </>
   );
 }
