@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <h1>Simple Data Generator example</h1>
+      <button>Show Books</button>
       <div className="container">
         {data.map((book) => (
           <div className="card" key={book.id}>
