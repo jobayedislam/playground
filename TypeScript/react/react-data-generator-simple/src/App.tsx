@@ -13,7 +13,9 @@ function App() {
   return (
     <>
       <h1>Simple Data Generator example</h1>
-      <button onClick={handleToggleBooks}>Show Books</button>
+      <button onClick={handleToggleBooks}>
+        {areBooksShown ? "Hide Books" : "Show Books"}
+      </button>
       <div className="container">
         {areBooksShown &&
           data.map((book) => (
