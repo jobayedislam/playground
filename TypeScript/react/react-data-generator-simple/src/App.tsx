@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <h1>Simple Data Generator example</h1>
-      <button onClick={handleToggleBooks}>
+      <button onClick={handleToggleBooks} className="toggle-books-btn">
         {areBooksShown ? "Hide Books" : "Show Books"}
       </button>
       <div className="container">

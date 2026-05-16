@@ -12,3 +12,7 @@
   justify-content: space-around;
   row-gap: 2rem;
 }
+
+.toggle-books-btn {
+  margin-bottom: 2rem;
+}
