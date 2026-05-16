@@ -17,16 +17,17 @@ function App() {
       <button onClick={handleToggleBooks} className="toggle-books-btn">
         {areBooksShown ? "Hide Books" : "Show Books"}
       </button>
-      <div className="container">
-        {areBooksShown &&
-          data.map((book) => (
+      {areBooksShown && (
+        <div className="container">
+          {data.map((book) => (
             <div className="card" key={book.id}>
               <p>Name: {book.name}</p>
               <p>Author: {book.author}</p>
               <p>ISBN: {book.isbn}</p>
             </div>
           ))}
-      </div>
+        </div>
+      )}
     </>
   );
 }
