@@ -48,6 +48,13 @@ const userData: Users[] = [
   { name: "" },
 ];
 
+interface Tasks {
+  userId: number;
+  description: string;
+  priority: number;
+  completedAt: number;
+}
+
 db.exec("BEGIN");
 userData.forEach((item) => {
   insertUser.run(item.name);
