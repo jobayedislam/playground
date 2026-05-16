@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import "./App.css";
 import generateData from "./data/dataGenerator";
 
 function App() {
-  console.log(generateData());
+  useEffect(() => {
+    console.log(generateData());
+  }, []);
 
   return (
     <>
