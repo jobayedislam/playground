@@ -6,7 +6,7 @@ function App() {
   const [numOfBooks, setNumOfBooks] = useState<number>(15);
   const [data, setData] = useState<Book[]>(generateData(numOfBooks));
   const [areBooksShown, setAreBooksShown] = useState<boolean>(false);
-  const [inputText, setInputText] = useState<string>("");
+  const [inputText, setInputText] = useState<string>(numOfBooks.toString());
 
   const handleToggleBooks = () => {
     setAreBooksShown(!areBooksShown);
