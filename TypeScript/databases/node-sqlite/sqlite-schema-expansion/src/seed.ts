@@ -71,4 +71,12 @@ db.exec("BEGIN");
 userData.forEach((item) => {
   insertUser.run(item.name);
 });
+taskData.forEach((item) => {
+  insertTask.run(
+    item.userId,
+    item.description,
+    item.priority,
+    item.completedAt,
+  );
+});
 db.exec("COMMIT");
