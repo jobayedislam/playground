@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import generateData from "./data/dataGenerator";
+import generateData, { type Book } from "./data/dataGenerator";
 
 function App() {
+  const [data] = useState<Book[]>(generateData());
+
   useEffect(() => {
-    console.log(generateData());
+    console.log(data);
   }, []);
 
   return (
