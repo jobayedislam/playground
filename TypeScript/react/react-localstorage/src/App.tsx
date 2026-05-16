@@ -5,6 +5,7 @@ function App() {
 
   const handleClick = () => {
     console.log(text);
+    localStorage.setItem("inputText", text);
     setText("");
   };
 
