@@ -18,4 +18,13 @@ const sanitizeIsbn = (isbn) => {
   return sanitized;
 };
 
-console.log(sanitizeIsbn(input));
+const checkIsbn = (isbn) => {
+  const sanitizedIsbn = sanitizeIsbn(isbn);
+
+  if (sanitizedIsbn.length !== 10 && sanitizedIsbn.length !== 13)
+    return "Invalid input length";
+
+  return sanitizedIsbn;
+};
+
+console.log(checkIsbn(input));
