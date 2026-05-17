@@ -11,7 +11,7 @@ const input = "978-0-553-59371-6"; // 13-digit (valid)
 const sanitizeIsbn = (isbn) => {
   const sanitized = isbn
     .split("")
-    .map((n) => (n !== "-" ? n : ""))
+    .map((n) => (n === "-" ? "" : n))
     .join("");
 
   return sanitized;
