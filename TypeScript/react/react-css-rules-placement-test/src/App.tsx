@@ -8,4 +8,12 @@ function App() {
   );
 }
 
+// const styles = new StyleSheet
+
+// styles = {
+//   headingOne: {
+//     color: "cyan"
+//   }
+// }
+
 export default App;
