@@ -12,6 +12,7 @@ const sanitizeIsbn = (isbn) => {
   const sanitized = isbn
     .split("")
     .map((n) => (n === "-" ? "" : n))
+    .map((n) => (n === " " ? "" : n))
     .join("");
 
   return sanitized;
