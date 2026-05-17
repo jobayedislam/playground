@@ -3,7 +3,7 @@ import "./App.css";
 import generateData, { type Book } from "./data/dataGenerator";
 
 function App() {
-  const [numOfBooks, setNumOfBooks] = useState<number>(15);
+  const [numOfBooks] = useState<number>(15);
   const [data, setData] = useState<Book[]>(generateData(numOfBooks));
   const [areBooksShown, setAreBooksShown] = useState<boolean>(false);
   const [inputText, setInputText] = useState<string>(numOfBooks.toString());
