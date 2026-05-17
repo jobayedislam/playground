@@ -8,4 +8,13 @@ const input = "978-0-553-59371-6"; // 13-digit (valid)
 // const input = "0-12-515430-X"; // 10-digit (invalid)
 // const input = "012515430X"; // 10-digit (invalid)
 
-console.log(input);
+const sanitizeIsbn = (isbn) => {
+  const sanitized = isbn
+    .split("")
+    .map((n) => (n !== "-" ? n : ""))
+    .join("");
+
+  return sanitized;
+};
+
+console.log(sanitizeIsbn(input));
