@@ -9,6 +9,7 @@ if (fs.existsSync(dbFile)) {
 }
 
 const db = new DatabaseSync(dbFile);
+console.log("Database Created!");
 
 db.exec(`
     CREATE TABLE users (
@@ -17,3 +18,4 @@ db.exec(`
         password TEXT
     ) STRICT
 `);
+console.log("Schema Definition Finished!");
