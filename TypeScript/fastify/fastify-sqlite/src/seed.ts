@@ -9,3 +9,11 @@ if (fs.existsSync(dbFile)) {
 }
 
 const db = new DatabaseSync(dbFile);
+
+db.exec(`
+    CREATE TABLE users (
+        id INTEGER PRIMARY KEY,
+        email TEXT,
+        password TEXT
+    ) STRICT
+`);
