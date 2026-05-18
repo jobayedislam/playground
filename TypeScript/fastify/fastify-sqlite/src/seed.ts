@@ -21,3 +21,8 @@ db.exec(`
 console.log("Schema Definition Finished!");
 
 const insert = db.prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+
+interface User {
+  email: string;
+  password: string;
+}
