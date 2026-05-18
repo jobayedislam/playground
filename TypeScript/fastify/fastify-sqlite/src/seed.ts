@@ -26,3 +26,8 @@ interface User {
   email: string;
   password: string;
 }
+
+const usersList: User[] = [
+  { email: "test1@gmail.com", password: "helloworld" },
+  { email: "test2@gmail.com", password: "helloworld" },
+];
