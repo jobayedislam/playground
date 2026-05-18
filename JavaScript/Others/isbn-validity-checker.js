@@ -29,6 +29,18 @@ const validateTenDigit = (isbn) => {
   else return false;
 };
 
+const validateThirteenDigit = (isbn) => {
+  let total = 0;
+  for (let i = 0; i < isbn.length; i++) {
+    let curElement = i + 1;
+    if (curElement % 2 !== 0) total += Number(isbn[i]) * 1;
+    else total += Number(isbn[i]) * 3;
+  }
+
+  if (total % 10 === 0) return true;
+  else return false;
+};
+
 const checkIsbn = (isbn) => {
   const sanitizedIsbn = sanitizeIsbn(isbn);
 
