@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
 import { DatabaseSync } from "node:sqlite";
-const db = new DatabaseSync("./data.db");
+const db = new DatabaseSync("./data1.db");
 
 const usersRoute = async (server: FastifyInstance) => {
   server.get("/", async (req, res) => {
@@ -14,7 +14,11 @@ const usersRoute = async (server: FastifyInstance) => {
     const query = db.prepare("SELECT * FROM users WHERE email = (?)");
     const result = query.get(email);
 
-    res.code(201).send(result);
+    if (result) {
+      res.code(200).send(result);
+    } else {
+      res.code(404).send({ message: "Not found" });
+    }
   });
 };
 
