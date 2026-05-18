@@ -31,3 +31,11 @@ const usersList: User[] = [
   { email: "test1@gmail.com", password: "helloworld" },
   { email: "test2@gmail.com", password: "helloworld" },
 ];
+
+db.exec("BEGIN");
+usersList.forEach((item) => {
+  insert.run(item.email, item.password);
+});
+db.exec("COMMIT");
+
+console.log("Data insertion finished!");
