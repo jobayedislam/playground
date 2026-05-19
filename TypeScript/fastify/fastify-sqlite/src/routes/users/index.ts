@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
 import { DatabaseSync } from "node:sqlite";
-const db = new DatabaseSync("./data1.db");
+const db = new DatabaseSync("./data.db");
 
 const usersRoute = async (server: FastifyInstance) => {
   server.get("/", async (req, res) => {
