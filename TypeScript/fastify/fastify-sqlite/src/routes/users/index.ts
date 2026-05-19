@@ -21,7 +21,7 @@ const usersRoute = async (server: FastifyInstance) => {
     }
   });
 
-  type GetUserParams = { id: string };
+  type GetUserParams = { id: number };
   server.get<{ Params: GetUserParams }>("/list/:id", async (req, res) => {
     const { id } = req.params;
     res.code(200).send({ id });
