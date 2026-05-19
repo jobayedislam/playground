@@ -20,6 +20,10 @@ const usersRoute = async (server: FastifyInstance) => {
       res.code(404).send({ message: "Not found" });
     }
   });
+
+  server.get("/list", async (req, res) => {
+    res.code(200).send({ message: "GET req on /list working!" });
+  });
 };
 
 export default usersRoute;
