@@ -21,7 +21,9 @@ const usersRoute = async (server: FastifyInstance) => {
     }
   });
 
-  server.get("/list", async (req, res) => {
+  type GetUserParams = { email: string };
+  server.get<{ Params: GetUserParams }>("/list", async (req, res) => {
+    const { email } = req.params;
     res.code(200).send({ message: "GET req on /list working!" });
   });
 };
