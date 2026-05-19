@@ -24,7 +24,11 @@ const usersRoute = async (server: FastifyInstance) => {
   type GetUserParams = { id: number };
   server.get<{ Params: GetUserParams }>("/list/:id", async (req, res) => {
     const { id } = req.params;
-    res.code(200).send({ id });
+
+    const query = db.prepare("SELECT * FROM users WHERE id = (?)");
+    const result = query.get(id);
+
+    res.code(200).send(result);
   });
 };
 
