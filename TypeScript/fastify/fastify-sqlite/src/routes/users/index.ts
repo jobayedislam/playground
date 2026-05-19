@@ -21,10 +21,10 @@ const usersRoute = async (server: FastifyInstance) => {
     }
   });
 
-  type GetUserParams = { email: string };
-  server.get<{ Params: GetUserParams }>("/list", async (req, res) => {
-    const { email } = req.params;
-    res.code(200).send({ message: "GET req on /list working!" });
+  type GetUserParams = { id: string };
+  server.get<{ Params: GetUserParams }>("/list/:id", async (req, res) => {
+    const { id } = req.params;
+    res.code(200).send({ id });
   });
 };
 
