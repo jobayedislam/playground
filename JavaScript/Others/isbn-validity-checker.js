@@ -1,16 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert";
 
-const input = "978-0-553-59371-6"; // 13-digit (valid)
-// const input = "9780553593716"; // 13-digit (valid)
-// const input = "978-0-553-59371-7"; // 13-digit (invalid)
-// const input = "9780553593717"; // 13-digit (invalid)
-
-// const input = "0-316-76948-7"; // 10-digit (valid)
-// const input = "0316769487"; // 10-digit (valid)
-// const input = "0-12-515430-X"; // 10-digit (invalid)
-// const input = "012515430X"; // 10-digit (invalid)
-
 const sanitizeIsbn = (isbn) => {
   const sanitized = isbn
     .split("")
@@ -53,7 +43,19 @@ const checkIsbn = (isbn) => {
   else return "Invalid input length.";
 };
 
-// console.log(checkIsbn(input));
-
 test("13-digit valid (dashes)", () =>
   assert.strictEqual(checkIsbn("978-0-553-59371-6"), true));
+test("13-digit valid (plain)", () =>
+  assert.strictEqual(checkIsbn("9780553593716"), true));
+test("13-digit invalid (dashes)", () =>
+  assert.strictEqual(checkIsbn("978-0-553-59371-7"), false));
+test("13-digit invalid (plain)", () =>
+  assert.strictEqual(checkIsbn("9780553593717"), false));
+test("10-digit valid (dashes)", () =>
+  assert.strictEqual(checkIsbn("0-316-76948-7"), true));
+test("10-digit valid (plain)", () =>
+  assert.strictEqual(checkIsbn("0316769487"), true));
+test("10-digit invalid (dashes-X)", () =>
+  assert.strictEqual(checkIsbn("0-12-515430-X"), false));
+test("10-digit invalid (dashes-X)", () =>
+  assert.strictEqual(checkIsbn("012515430X"), false));
