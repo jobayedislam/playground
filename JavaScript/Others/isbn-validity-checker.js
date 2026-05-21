@@ -1,3 +1,6 @@
+import { test } from "node:test";
+import assert from "node:assert";
+
 const input = "978-0-553-59371-6"; // 13-digit (valid)
 // const input = "9780553593716"; // 13-digit (valid)
 // const input = "978-0-553-59371-7"; // 13-digit (invalid)
@@ -50,4 +53,7 @@ const checkIsbn = (isbn) => {
   else return "Invalid input length.";
 };
 
-console.log(checkIsbn(input));
+// console.log(checkIsbn(input));
+
+test("13-digit valid (dashes)", () =>
+  assert.strictEqual(checkIsbn("978-0-553-59371-6"), true));
