@@ -1,0 +1,13 @@
+### Health check
+
+GET http://localhost:3000 HTTP/1.1
+
+
+### List users
+
+GET http://localhost:3000/users HTTP/1.1
+
+
+### Details with user id
+
+GET http://localhost:3000/users/list/1 HTTP/1.1
